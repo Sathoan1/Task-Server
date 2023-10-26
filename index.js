@@ -3,10 +3,12 @@ const express = require('express');
 const app= express();
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 4000;
+const cors = require('cors')
 const taskRouter = require('./routes/taskRoutes')
 
 
 app.use(express.json())
+app.use(cors())
 
 //routes
 app.use('/api/tasks', taskRouter)
